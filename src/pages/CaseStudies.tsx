@@ -1,0 +1,102 @@
+import React from 'react';
+import { Asset } from '../components/Asset';
+import { SectionHeader } from '../components/SectionHeader';
+import { CTABanner } from '../components/CTABanner';
+import { Link } from 'react-router-dom';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+
+const CaseStudies: React.FC = () => {
+  return (
+    <div className="pt-20">
+      <section className="section-padding bg-bg-primary">
+        <div className="container mx-auto px-6">
+          <SectionHeader 
+            h2="Real deployments. Real results."
+            subtext="From 100-vehicle fleets in Nigeria to national AI platforms for government — here is what we have built and what it delivered."
+          />
+          
+          <div className="flex gap-3 mb-12 md:mb-20 overflow-x-auto no-scrollbar pb-6 border-b border-border-subtle snap-x">
+            {["All", "Fleet Intelligence", "Asset Management", "TwinScape", "Dataverse", "Middle East", "Africa", "South Asia"].map(f => (
+              <button key={f} className={`px-5 py-2.5 text-xs font-semibold whitespace-nowrap rounded-full border border-border-default snap-start transition-all ${f === 'All' ? 'bg-text-primary text-bg-primary border-text-primary' : 'text-text-secondary hover:border-text-secondary hover:text-text-primary'}`}>
+                {f}
+              </button>
+            ))}
+          </div>
+
+          <div className="space-y-24 md:space-y-32">
+             <CaseStudyFull 
+               logo="/SiteGraphics/logos/clients/mtn-case.svg"
+               title="100+ SME Fleets Deployed Across Nigeria"
+               body="Through our partnership with MTN Nigeria, we deployed Fleet Intelligence across over 100 SME customers — bringing real-time vehicle tracking, driver safety and fuel monitoring to businesses that previously had no visibility over their operations."
+               results={["99% uptime for fleet managers", "30% reduction in fuel theft", "Safety scoring for 500+ drivers"]}
+               tags={["Fleet Intelligence", "Nigeria", "Telecom Partnership"]}
+             />
+             <CaseStudyFull 
+               logo="/SiteGraphics/logos/clients/vodafone-case.svg"
+               title="Enterprise IoT Across Qatar's Leading Organisations"
+               body="Deployed IoTility across Qatar Energy, Bateel, First Group and Sunoono through Vodafone Qatar — bringing unified fleet and asset intelligence to some of the region's most demanding operational environments."
+               results={["Unified multi-org dashboard", "Real-time asset visibility", "Cross-country fleet management"]}
+               tags={["Fleet Intelligence", "Asset Management", "Qatar"]}
+             />
+             <CaseStudyFull 
+               logo="/SiteGraphics/logos/clients/nitb-case.svg"
+               title="National AI Platform for Government of Pakistan"
+               body="Built and deployed a national-scale agentic AI platform and datalake architecture for NITB — the National Information Technology Board of Pakistan — enabling AI-driven decision making across government operations."
+               results={["National-scale datalake", "Agentic AI orchestration", "Secure government-grade infra"]}
+               tags={["Dataverse", "Agentic AI", "Government"]}
+             />
+          </div>
+
+          <div className="mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+             <CaseStudySmall title="Doha Cables: Outdoor Asset Management" body="Cable drum tracking across multiple high-security industrial sites." />
+             <CaseStudySmall title="Hospital: Indoor Medical Tracking" body="Real-time location of critical medical devices across multiple wards." />
+             <CaseStudySmall title="University: Campus Asset Intelligence" body="Student card scanning and device tracking in a large campus environment." />
+          </div>
+        </div>
+      </section>
+
+      <CTABanner h2="Have a project in mind?" subtext="Let's build something world-class together." btnText="Let's Talk" />
+    </div>
+  );
+};
+
+const CaseStudyFull = ({ logo, title, body, results, tags }: any) => (
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+    <div>
+      <Asset src={logo} description="Client Logo" dimensions="80x32" className="!w-20 !h-8 !border-none !bg-transparent !p-0 mb-8" />
+      <h3 className="mb-6">{title}</h3>
+      <p className="text-text-secondary text-[16px] md:text-lg lg:text-[18px] leading-relaxed mb-10">{body}</p>
+      <div className="mb-10">
+        <h4 className="text-sm font-bold uppercase tracking-widest text-text-tertiary mb-6">Key Results</h4>
+        <div className="space-y-4">
+           {results.map((r: string) => (
+             <div key={r} className="flex gap-4">
+               <div className="w-1.5 h-1.5 rounded-full bg-cyan-accent mt-2 flex-shrink-0" />
+               <p className="text-text-primary font-medium text-[15px] md:text-base">{r}</p>
+             </div>
+           ))}
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-2">
+         {tags.map((t: string) => <span key={t} className="px-3 py-1 bg-bg-secondary text-[10px] font-bold text-text-tertiary border border-border-default rounded-full uppercase tracking-tighter">{t}</span>)}
+      </div>
+    </div>
+    <div className="bg-bg-secondary border border-border-subtle rounded-3xl h-[300px] md:h-[400px] flex items-center justify-center text-text-tertiary italic text-center p-8 mt-8 lg:mt-0">
+      <div className="max-w-xs mx-auto">
+        [ASSET: Case Study Visual — Detailed breakdown of project metrics and dashboards]
+      </div>
+    </div>
+  </div>
+);
+
+const CaseStudySmall = ({ title, body }: any) => (
+  <div className="bg-bg-secondary p-8 md:p-10 rounded-2xl border border-border-subtle hover:border-cyan-accent transition-all flex flex-col h-full">
+    <h4 className="text-xl font-bold mb-4">{title}</h4>
+    <p className="text-text-secondary text-sm leading-relaxed mb-8 flex-grow">{body}</p>
+    <Link to="#" className="mt-auto text-cyan-accent text-xs font-semibold flex items-center gap-2 group">
+      View details <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+    </Link>
+  </div>
+);
+
+export default CaseStudies;
