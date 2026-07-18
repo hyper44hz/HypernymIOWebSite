@@ -23,6 +23,9 @@
   }
   body {
     @apply bg-bg-primary text-text-primary font-sans antialiased selection:bg-cyan-accent/30;
+    background-image:
+      radial-gradient(circle at 15% -10%, rgba(107, 47, 217, 0.12), transparent 28rem),
+      radial-gradient(circle at 90% 20%, rgba(0, 200, 224, 0.06), transparent 24rem);
   }
   
   h1 {
@@ -44,7 +47,8 @@
 
 @layer components {
   .btn-primary {
-    @apply px-7 py-3 bg-cyan-accent text-bg-primary font-semibold rounded-lg hover:bg-[#33D4E8] transition-all duration-200 hover:scale-[1.02] inline-block text-center cursor-pointer text-[14px] min-h-[48px] flex items-center justify-center;
+    @apply px-7 py-3 bg-cyan-accent text-bg-primary font-semibold rounded-lg hover:bg-[#33D4E8] transition-all duration-200 hover:-translate-y-0.5 inline-block text-center cursor-pointer text-[14px] min-h-[48px] flex items-center justify-center;
+    box-shadow: 0 12px 30px rgba(0, 200, 224, 0.15);
   }
   
   .btn-secondary {
@@ -57,10 +61,38 @@
   
   .card-premium {
     @apply bg-bg-secondary border border-border-subtle rounded-2xl p-6 md:p-8 transition-all duration-300 hover:border-border-default hover:shadow-premium;
+    background-image: linear-gradient(145deg, rgba(255,255,255,0.025), transparent 42%);
   }
 
   .section-padding {
     @apply py-16 md:py-24 lg:py-[120px];
+  }
+}
+
+.eyebrow,
+.form-label {
+  @apply text-[11px] font-bold uppercase tracking-[0.14em] text-cyan-accent;
+}
+
+.form-label {
+  @apply text-text-tertiary tracking-widest;
+}
+
+.form-control {
+  @apply w-full bg-bg-primary border border-border-default rounded-lg px-4 py-3.5 text-text-primary outline-none transition-colors focus:border-cyan-accent focus:ring-2 focus:ring-cyan-accent/10;
+}
+
+:focus-visible {
+  outline: 2px solid #00C8E0;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
@@ -89,4 +121,14 @@
 
 .fade-up {
   animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
 }

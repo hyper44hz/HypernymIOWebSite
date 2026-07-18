@@ -110,7 +110,7 @@ npm run dev
 | `sustainex-hero.jpg` | `products/` | JPG | 1200x600 | ESG and carbon tracking dashboard | High |
 | `utilities-hero.jpg` | `products/` | JPG | 1200x600 | Utilities monitoring dashboard | High |
 | `dataverse-hero.jpg` | `products/` | JPG | 1200x600 | AI / Neural network abstract hero | High |
-| `iotility-platform-preview.jpg` | `products/` | JPG | 800x450 | IoTility platform UI showcase | High |
+| `iotility-platform-preview.png` | `products/` | PNG | 800x450 | IoTility platform UI showcase | High |
 | `dataverse-platform-preview.jpg` | `products/` | JPG | 800x450 | Dataverse interface showcase | High |
 | `iotility-ecosystem-diagram.jpg` | `products/` | JPG | 800x500 | Diagram of connected IOT modules | Medium |
 | `fleet-hardware-lineup.jpg` | `products/` | JPG | 800x400 | Professional photo of GPS and dashcams | Medium |

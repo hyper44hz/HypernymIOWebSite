@@ -24,7 +24,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({ eyebrow, h2, subte
       )}
       <h2 className="text-text-primary mb-6">{h2}</h2>
       {subtext && (
-        <p className="text-text-secondary text-[16px] md:text-lg leading-relaxed max-w-[640px] mx-auto">
+        <p className={`text-text-secondary text-[16px] md:text-lg leading-relaxed max-w-[640px] ${center ? 'mx-auto' : ''}`}>
           {subtext}
         </p>
       )}

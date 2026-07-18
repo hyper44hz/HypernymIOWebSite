@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const CTABanner: React.FC<{ h2?: string; subtext?: string; btnText?: string; secondaryLink?: string }> = ({ 
@@ -8,7 +8,7 @@ export const CTABanner: React.FC<{ h2?: string; subtext?: string; btnText?: stri
   secondaryLink = "Or explore the platform yourself →"
 }) => {
   return (
-    <section className="container mx-auto px-6 py-20">
+    <section className="container mx-auto px-5 sm:px-8 lg:px-[60px] py-20">
       <div className="bg-gradient-to-br from-cyan-accent to-purple-accent rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
         <div className="relative z-10 max-w-[800px] mx-auto">
           <h2 className="text-bg-primary mb-6">{h2}</h2>
@@ -28,3 +28,5 @@ export const CTABanner: React.FC<{ h2?: string; subtext?: string; btnText?: stri
     </section>
   );
 };
+
+

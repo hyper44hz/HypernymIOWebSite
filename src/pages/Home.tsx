@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { motion } from 'motion/react';
 import { Asset } from '../components/Asset';
 import { SectionHeader } from '../components/SectionHeader';
@@ -10,76 +10,97 @@ const Home: React.FC = () => {
   return (
     <div className="overflow-x-hidden">
       {/* Section 1 — Hero */}
-      <section className="relative h-[100vh] min-h-[600px] md:min-h-[800px] flex items-center justify-center bg-bg-primary overflow-hidden">
+      <section className="relative min-h-[760px] lg:min-h-[820px] flex items-center justify-center bg-[#16091f] overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Asset 
+          {/* <Asset 
             src="/SiteGraphics/hero/hero-bg-video.mp4" 
             description="Cinematic looping video: aerial IoT city view, fleet vehicles moving, data flowing through nodes" 
             dimensions="1920x1080" 
             className="w-full h-full object-cover !rounded-none !border-none opacity-40"
-          />
+          /> */}
           <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/40 via-bg-primary/70 to-bg-primary" />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10 text-center py-20 lg:py-0">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-8"
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full border border-border-default bg-bg-tertiary text-text-secondary text-[10px] md:text-[12px] font-medium tracking-wider uppercase">
-              ISO 27001:2022 Certified &bull; Deployed in 11 Countries
-            </span>
-          </motion.div>
+        <div className="container mx-auto px-5 sm:px-8 lg:px-[60px] relative z-10 py-20 lg:py-0 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column — Text */}
+          <div className="pt-12 lg:pt-0 lg:-mt-[80px]">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mb-6 md:mb-8"
+            >
+              <span className="inline-block px-4 py-1.5 rounded-full border border-border-default bg-bg-tertiary text-text-secondary text-[10px] md:text-[12px] font-medium tracking-wider uppercase">
+                ISO 27001:2022 Certified &bull; Deployed in 11 Countries
+              </span>
+            </motion.div>
 
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-text-primary mb-2"
-          >
-            From Sensor to Decision.
-          </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-text-primary mb-2"
+            >
+              From Sensor to Decision.
+            </motion.h1>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="gradient-text mb-8 text-[28px] md:text-[36px] lg:text-[48px] font-semibold leading-tight tracking-tight"
-          >
-            The Intelligence Layer for Physical Operations
-          </motion.h2>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="gradient-text mb-8 text-[28px] md:text-[36px] lg:text-[48px] font-semibold leading-tight tracking-tight"
+            >
+              The Intelligence Layer for Physical Operations
+            </motion.h2>
 
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-text-secondary text-[16px] md:text-lg lg:text-[18px] max-w-[640px] mx-auto mb-10 leading-relaxed px-4 md:px-0"
-          >
-            Unified platform for fleet, assets, buildings and sustainability with enterprise AI built in.
-          </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-text-secondary text-[16px] md:text-lg lg:text-[18px] max-w-[520px] mb-10 leading-relaxed"
+            >
+              One connected platform for fleet, assets, buildings and sustainability—with enterprise AI built in.
+            </motion.p>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="flex flex-col sm:flex-row items-start gap-4 mb-40 lg:mb-0"
+            >
+              <Link to="/contact" className="btn-primary w-full sm:w-[180px]">Get a Demo</Link>
+              <Link to="/iotility" className="btn-secondary w-full sm:w-[180px]">Explore IoTility &rarr;</Link>
+            </motion.div>
+          </div>
+
+          {/* Right Column — Visual */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.5 }}
+            className="hidden lg:flex items-center justify-center mb-24"
           >
-            <Link to="/contact" className="btn-primary w-full sm:w-[180px]">Get a Demo</Link>
-            <Link to="/iotility" className="btn-secondary w-full sm:w-[180px]">Explore IoTility &rarr;</Link>
+            <div className="relative w-full max-w-[700px]">
+              <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-accent-primary/30 to-transparent blur-xl" />
+              <Asset
+                src="/SiteGraphics/hero/hero-bg-video.mp4"
+                description="Cinematic looping video: aerial IoT city view, fleet vehicles moving, data flowing through nodes"
+                dimensions="1920x1080"
+                className="w-full h-full object-cover !rounded-2xl !border-none opacity-100"
+              />
+            </div>
           </motion.div>
         </div>
 
         {/* Stats Strip */}
         <div className="absolute bottom-0 left-0 w-full bg-bg-secondary border-t border-border-subtle py-6 md:py-10">
-          <div className="container mx-auto px-6 grid grid-cols-2 md:flex md:flex-row md:justify-around items-center gap-8 md:gap-4">
+          <div className="container mx-auto px-5 sm:px-8 lg:px-[60px] grid grid-cols-2 md:flex md:flex-row md:justify-around items-center gap-8 md:gap-4">
             <StatItem value="15,000+" label="Devices" />
-            <StatItem value="8 Years" label="Operation" />
+            <StatItem value="8 Years" label="In operation" />
             <StatItem value="99%" label="Retention" />
             <StatItem value="11" label="Countries" />
             <div className="hidden lg:block">
-              <Asset src="/SiteGraphics/about/iso-badge.svg" description="ISO 27001" dimensions="100x24" className="!w-[100px] !h-[24px] !p-0 !bg-transparent !border-none !min-h-0" />
+              <Asset src="/SiteGraphics/about/iso-badge.svg" description="ISO 27001" dimensions="100x24" className="!w-[100px] !h-[35px] !p-0 !bg-transparent !border-none !min-h-0" />
             </div>
           </div>
         </div>
@@ -90,24 +111,45 @@ const Home: React.FC = () => {
         <p className="text-center text-[11px] text-text-tertiary font-bold tracking-[0.12em] uppercase mb-12 px-6">
           TRUSTED BY LEADING ORGANISATIONS
         </p>
-        <div className="flex gap-8 md:gap-12 overflow-x-auto no-scrollbar px-6 lg:justify-center items-center">
-          <ClientLogo src="/SiteGraphics/logos/clients/vodafone.svg" alt="Vodafone" />
-          <ClientLogo src="/SiteGraphics/logos/clients/mtn.svg" alt="MTN" />
-          <ClientLogo src="/SiteGraphics/logos/clients/qatar-energy.svg" alt="Qatar Energy" />
-          <ClientLogo src="/SiteGraphics/logos/clients/first-group.svg" alt="First Group Dubai" />
-          <ClientLogo src="/SiteGraphics/logos/clients/bateel.svg" alt="Bateel Qatar" />
-          <ClientLogo src="/SiteGraphics/logos/clients/sunoono.svg" alt="Sunoono Qatar" />
-          <ClientLogo src="/SiteGraphics/logos/clients/doha-cables.svg" alt="Doha Cables" />
-          <ClientLogo src="/SiteGraphics/logos/clients/nitb.svg" alt="NITB Pakistan" />
+        <div className="relative w-full overflow-hidden">
+          <div className="flex gap-16 animate-marquee items-center w-max">
+            {[
+              { src: "/SiteGraphics/logos/clients/vodafone.svg", alt: "Vodafone" },
+              { src: "/SiteGraphics/logos/clients/mtn.svg", alt: "MTN" },
+              { src: "/SiteGraphics/logos/clients/qatar-energy.svg", alt: "Qatar Energy" },
+              { src: "/SiteGraphics/logos/clients/first-group.svg", alt: "First Group Dubai" },
+              { src: "/SiteGraphics/logos/clients/bateel.svg", alt: "Bateel Qatar" },
+              { src: "/SiteGraphics/logos/clients/sunoono.svg", alt: "Sunoono Qatar" },
+              { src: "/SiteGraphics/logos/clients/doha-cables.svg", alt: "Doha Cables" },
+              { src: "/SiteGraphics/logos/clients/nitb.svg", alt: "NITB Pakistan" },
+              { src: "/SiteGraphics/logos/clients/ehcd.svg", alt: "EHCD" },
+              { src: "/SiteGraphics/logos/clients/frani-t.svg", alt: "Farani Taylor" },
+            ].concat([
+              { src: "/SiteGraphics/logos/clients/vodafone.svg", alt: "Vodafone" },
+              { src: "/SiteGraphics/logos/clients/mtn.svg", alt: "MTN" },
+              { src: "/SiteGraphics/logos/clients/qatar-energy.svg", alt: "Qatar Energy" },
+              { src: "/SiteGraphics/logos/clients/first-group.svg", alt: "First Group Dubai" },
+              { src: "/SiteGraphics/logos/clients/bateel.svg", alt: "Bateel Qatar" },
+              { src: "/SiteGraphics/logos/clients/sunoono.svg", alt: "Sunoono Qatar" },
+              { src: "/SiteGraphics/logos/clients/doha-cables.svg", alt: "Doha Cables" },
+              { src: "/SiteGraphics/logos/clients/nitb.svg", alt: "NITB Pakistan" },
+              { src: "/SiteGraphics/logos/clients/ehcd.svg", alt: "EHCD" },
+              { src: "/SiteGraphics/logos/clients/frani-t.svg", alt: "Farani Taylor" },
+            ]).map((logo, i) => (
+              <div key={i} className="flex-shrink-0 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 h-[32px] flex items-center justify-center">
+                <img src={logo.src} alt={logo.alt} className="h-full w-auto max-w-[120px] object-contain" />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Section 3 — Two Pillars */}
-      <section className="bg-bg-primary section-padding container mx-auto px-6">
+      <section className="bg-bg-primary section-padding container mx-auto px-5 sm:px-8 lg:px-[60px]">
         <SectionHeader 
           eyebrow="THE HYPERNYM ECOSYSTEM"
           h2="Two platforms. One ecosystem."
-          subtext="IoTility connects your physical world. Dataverse makes it intelligent. Together they form the only platform that goes from a temperature sensor on an oil tanker to a government-grade AI datalake."
+          subtext="IoTility connects your physical world. Dataverse makes it intelligent. Together they create a unified path from field sensors to enterprise decisions."
           center
         />
 
@@ -126,14 +168,14 @@ const Home: React.FC = () => {
             body="Agentic AI frameworks and datalake deployments for governments, telecoms, and high-stakes operational environments."
             accent="purple"
             link="/dataverse"
-            visual="/SiteGraphics/products/dataverse-platform-preview.jpg"
+            visual="/SiteGraphics/products/dataverse-platform-preview.png"
           />
         </div>
       </section>
 
       {/* Section 4 — IoTility Products */}
       <section className="bg-bg-secondary section-padding">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-[60px]">
           <SectionHeader 
             eyebrow="IOTILITY PLATFORM"
             h2="Every operation. One login."
@@ -180,18 +222,18 @@ const Home: React.FC = () => {
 
       {/* Section 5 — Dataverse Feature */}
       <section className="bg-bg-primary section-padding">
-        <div className="container mx-auto px-6 grid md:grid-cols-2 gap-16 md:gap-20 items-center">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-[60px] grid md:grid-cols-2 gap-16 md:gap-20 items-center">
           <div>
             <SectionHeader 
               eyebrow="DATAVERSE"
-              h2="Enterprise AI. Deployed, not promised."
-              subtext="We don't sell AI strategy. We build and deploy AI infrastructure — datalakes, ML frameworks and agentic AI platforms — for governments and telecoms."
+              h2="Enterprise data and AI, engineered for production."
+              subtext="Dataverse brings governed data, machine learning, decision intelligence and agentic automation together as one enterprise platform."
             />
             
             <div className="space-y-8 mb-12">
               <DataverseFeatureItem 
                 title="Agentic AI Frameworks"
-                desc="Intelligent agents that automate complex workflows with minimal human intervention. Deployed for NITB, Pakistan."
+                desc="Intelligent agents that automate complex workflows with governance, auditability and human oversight."
               />
               <DataverseFeatureItem 
                 title="Data Intelligence"
@@ -219,14 +261,14 @@ const Home: React.FC = () => {
 
       {/* Section 6 — Case Studies */}
       <section className="bg-bg-secondary section-padding">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-[60px]">
           <SectionHeader eyebrow="CASE STUDIES" h2="Results that speak." />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
             <CaseStudyCard 
               logo="/SiteGraphics/logos/clients/mtn-case.svg"
               title="100+ SME Fleets Deployed Across Nigeria"
-              body="Through our partnership with MTN Nigeria, we enabled real-time vessel tracking and fuel monitoring for businesses with no previous visibility."
+              body="Through our partnership with MTN Nigeria, we enabled real-time vehicle tracking and fuel monitoring for businesses with no previous visibility."
               tags={["Fleet Intelligence", "Nigeria"]}
             />
             <CaseStudyCard 
@@ -236,9 +278,9 @@ const Home: React.FC = () => {
               tags={["Fleet Intelligence", "Qatar"]}
             />
             <CaseStudyCard 
-              logo="/SiteGraphics/logos/clients/nitb-case.svg"
-              title="National AI Platform for Government of Pakistan"
-              body="Built and deployed a national-scale agentic AI platform and datalake architecture for NITB, enabling AI-driven decision making."
+              logo="/SiteGraphics/logos/clients/nitb.svg"
+              title="Sovereign AI Architecture for the Public Sector"
+              body="Designed a national-scale agentic AI and datalake architecture for NITB, built around sovereign deployment and government-grade controls."
               tags={["Dataverse", "Pakistan"]}
             />
           </div>
@@ -251,7 +293,7 @@ const Home: React.FC = () => {
 
       {/* Section 7 — Hardware & Technology Partners */}
       <section className="bg-bg-primary section-padding border-y border-border-subtle">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-[60px] text-center">
           <p className="text-[11px] text-text-tertiary font-bold tracking-[0.12em] uppercase mb-12">
             GLOBAL HARDWARE & TECHNOLOGY PARTNERS
           </p>
@@ -321,7 +363,7 @@ const PillarCard: React.FC<{
 
 const ProductCard: React.FC<{ icon: string; title: string; body: string; verticals?: string; to: string }> = ({ icon, title, body, verticals, to }) => (
   <Link to={to} className="group bg-bg-primary p-10 rounded-2xl border border-border-subtle hover:border-cyan-accent transition-all flex flex-col h-full hover:shadow-premium">
-    <Asset src={icon} description={`${title} icon`} dimensions="32x32" className="!w-8 !h-8 !bg-transparent !border-none !p-0 mb-8" />
+    <Asset src={icon} description={`${title} icon`} dimensions="56x56" className="!w-16 !h-16 !bg-transparent !border-none !p-0 mb-8" />
     <h4 className="text-xl font-semibold mb-4 group-hover:text-cyan-accent transition-colors">{title}</h4>
     <p className="text-text-secondary text-[14px] leading-relaxed mb-8">{body}</p>
     {verticals && (
@@ -350,7 +392,7 @@ const DataverseFeatureItem: React.FC<{ title: string; desc: string }> = ({ title
 
 const CaseStudyCard: React.FC<{ logo: string; title: string; body: string; tags: string[] }> = ({ logo, title, body, tags }) => (
   <div className="bg-bg-primary p-10 rounded-2xl border border-border-subtle hover:border-cyan-accent transition-all flex flex-col h-full">
-    <Asset src={logo} description="Client logo" dimensions="80x32" className="!w-20 !h-8 !bg-transparent !border-none !p-0 mb-8" />
+    <img src={logo} alt="Client logo" className="h-10 w-auto max-w-[140px] object-contain mb-8" />
     <h4 className="text-xl font-semibold mb-6">{title}</h4>
     <p className="text-text-secondary text-sm mb-10 leading-relaxed">{body}</p>
     <div className="mt-auto flex flex-wrap gap-2 mb-8">
@@ -367,3 +409,5 @@ const CaseStudyCard: React.FC<{ logo: string; title: string; body: string; tags:
 );
 
 export default Home;
+
+

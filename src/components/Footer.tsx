@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Link } from 'react-router-dom';
 import { Asset } from './Asset';
 import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
@@ -6,7 +6,7 @@ import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-bg-primary border-t border-border-subtle pt-24 pb-12">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-5 sm:px-8 lg:px-[60px]">
         <div className="flex flex-col lg:flex-row justify-between gap-12 mb-16 md:mb-20 items-center lg:items-start text-center lg:text-left">
           <div className="max-w-xs mx-auto lg:mx-0">
              <Link to="/">
@@ -82,10 +82,10 @@ export const Footer: React.FC = () => {
                 <span>info@hypernymbiz.com</span>
               </div>
               <div className="flex gap-4 pt-4 justify-center sm:justify-start">
-                <Link to="#" className="text-text-tertiary hover:text-cyan-accent"><Linkedin size={20} /></Link>
-                <Link to="#" className="text-text-tertiary hover:text-cyan-accent"><span className="text-xl font-bold">𝕏</span></Link>
-                <Link to="#" className="text-text-tertiary hover:text-cyan-accent font-semibold italic">IG</Link>
-                <Link to="#" className="text-text-tertiary hover:text-cyan-accent font-semibold italic">FB</Link>
+                <a aria-label="HyperNym on LinkedIn" href="https://www.linkedin.com/company/hypernym/" target="_blank" rel="noreferrer" className="text-text-tertiary hover:text-cyan-accent"><Linkedin size={20} /></a>
+                <a aria-label="HyperNym on X" href="https://x.com/Hypernym_" target="_blank" rel="noreferrer" className="text-text-tertiary hover:text-cyan-accent"><span className="text-xl font-bold">𝕏</span></a>
+                <a aria-label="HyperNym on Instagram" href="https://www.instagram.com/hypernymybiz/" target="_blank" rel="noreferrer" className="text-text-tertiary hover:text-cyan-accent font-semibold italic">IG</a>
+                <a aria-label="HyperNym on Facebook" href="https://www.facebook.com/Hypernymltd/" target="_blank" rel="noreferrer" className="text-text-tertiary hover:text-cyan-accent font-semibold italic">FB</a>
               </div>
             </div>
           </div>
@@ -116,3 +116,5 @@ const FooterLink: React.FC<{ to: string; children: React.ReactNode }> = ({ to, c
     </Link>
   </li>
 );
+
+

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Asset } from '../../components/Asset';
 import { SectionHeader } from '../../components/SectionHeader';
 import { CTABanner } from '../../components/CTABanner';
@@ -10,29 +10,36 @@ const FleetIntelligence: React.FC = () => {
     <div>
       {/* Hero */}
       <section className="section-padding bg-bg-primary">
-        <div className="container mx-auto px-6">
-          <SectionHeader 
-            eyebrow="IOTILITY · FLEET INTELLIGENCE"
-            h2="Fleet management built for your industry."
-            subtext="Not generic GPS tracking. Fleet Intelligence wraps around your specific operation — with workflows, alerts, driver tools and reporting built for how your industry actually works."
-          />
-          <div className="flex flex-col sm:flex-row gap-4 mb-12 md:mb-20 font-sans">
-             <Link to="/contact" className="btn-primary w-full sm:w-auto">Get a Demo</Link>
-          </div>
-          <div className="relative rounded-2xl overflow-hidden border border-border-subtle">
-            <Asset 
-              src="/SiteGraphics/products/fleet-hero.jpg" 
-              description="Fleet management dashboard showing vehicle map, driver status, alerts" 
-              dimensions="1200x600" 
-              className="w-full aspect-[2/1] md:aspect-[2.4/1] lg:aspect-[2.8/1]"
-            />
+        <div className="container mx-auto px-5 sm:px-8 lg:px-[60px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column — Text */}
+            <div>
+              <SectionHeader
+                eyebrow="IOTILITY · FLEET INTELLIGENCE"
+                h2="Fleet management built for your industry."
+                subtext="Not generic GPS tracking. Fleet Intelligence wraps around your specific operation — with workflows, alerts, driver tools and reporting built for how your industry actually works."
+              />
+              <div className="flex flex-col sm:flex-row gap-4 font-sans">
+                <Link to="/contact" className="btn-primary w-full sm:w-auto">Get a Demo</Link>
+              </div>
+            </div>
+
+            {/* Right Column — Image */}
+            <div className="relative rounded-2xl overflow-hidden border border-border-subtle">
+              <Asset
+                              src="/SiteGraphics/hero/fleet-1-720p.mp4"
+                              description=""
+                              dimensions="1920x1080"
+                              className="w-full h-full object-cover !rounded-2xl !border-none opacity-100"
+                            />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Stats Bar */}
       <div className="bg-bg-secondary border-y border-border-subtle py-10 md:py-12">
-        <div className="container mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-[60px] grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
           <StatsBarItem top="100+ SME Fleets" bottom="via MTN Nigeria" />
           <StatsBarItem top="11 Countries" bottom="Deployed" />
           <StatsBarItem top="Multi-industry" bottom="Workflows" />
@@ -42,7 +49,7 @@ const FleetIntelligence: React.FC = () => {
 
       {/* Industries */}
       <section className="section-padding bg-bg-primary">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-[60px]">
           <SectionHeader 
             h2="Built for your industry."
             subtext="One platform, multiple operational models. Each vertical comes with pre-built workflows, alert configurations and reporting templates."
@@ -86,7 +93,7 @@ const FleetIntelligence: React.FC = () => {
 
       {/* Capabilities */}
       <section className="section-padding bg-bg-secondary">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-[60px]">
           <SectionHeader 
             h2="Everything your fleet operation needs."
             center
@@ -106,21 +113,22 @@ const FleetIntelligence: React.FC = () => {
 
       {/* Hardware */}
       <section className="section-padding bg-bg-primary">
-        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-[60px] grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+           <div className="mt-8 md:mt-0">
+             <Asset 
+               src="/SiteGraphics/logos/hardware/fleet-hardware-lineup.jpg" 
+               description="Product lineup of fleet hardware: GPS tracker, dashcam, fuel sensor" 
+               dimensions="800x400" 
+               className="w-full aspect-[2/1] rounded-2xl"
+             />
+           </div>
            <div>
              <SectionHeader 
                h2="Hardware included. Vendor relationships handled."
                subtext="We source, configure and install the right hardware for your fleet — Teltonika trackers, Howen AI dashcams, JimiIoT sensors and more."
              />
            </div>
-           <div className="mt-8 md:mt-0">
-             <Asset 
-               src="/SiteGraphics/hardware/fleet-hardware-lineup.jpg" 
-               description="Product lineup of fleet hardware: GPS tracker, dashcam, fuel sensor" 
-               dimensions="800x400" 
-               className="w-full aspect-[2/1] rounded-2xl"
-             />
-           </div>
+           
         </div>
       </section>
 
@@ -152,3 +160,5 @@ const CapabilityItem = ({ children }: { children: React.ReactNode }) => (
 );
 
 export default FleetIntelligence;
+
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://hypernymbiz.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://hypernymbiz.com/iotility</loc><priority>0.9</priority></url>
+  <url><loc>https://hypernymbiz.com/iotility/fleet-intelligence</loc><priority>0.8</priority></url>
+  <url><loc>https://hypernymbiz.com/iotility/asset-management</loc><priority>0.8</priority></url>
+  <url><loc>https://hypernymbiz.com/iotility/asset-management/outdoor</loc><priority>0.8</priority></url>
+  <url><loc>https://hypernymbiz.com/iotility/asset-management/indoor</loc><priority>0.8</priority></url>
+  <url><loc>https://hypernymbiz.com/iotility/twinscape</loc><priority>0.8</priority></url>
+  <url><loc>https://hypernymbiz.com/iotility/sustainex</loc><priority>0.8</priority></url>
+  <url><loc>https://hypernymbiz.com/iotility/utilities-monitoring</loc><priority>0.8</priority></url>
+  <url><loc>https://hypernymbiz.com/dataverse</loc><priority>0.9</priority></url>
+  <url><loc>https://hypernymbiz.com/dataverse/agentic-ai-ml</loc><priority>0.8</priority></url>
+  <url><loc>https://hypernymbiz.com/dataverse/data-intelligence</loc><priority>0.8</priority></url>
+  <url><loc>https://hypernymbiz.com/dataverse/dashiq</loc><priority>0.8</priority></url>
+  <url><loc>https://hypernymbiz.com/dataverse/syncro</loc><priority>0.8</priority></url>
+  <url><loc>https://hypernymbiz.com/case-studies</loc><priority>0.8</priority></url>
+  <url><loc>https://hypernymbiz.com/about</loc><priority>0.7</priority></url>
+  <url><loc>https://hypernymbiz.com/careers</loc><priority>0.6</priority></url>
+  <url><loc>https://hypernymbiz.com/contact</loc><priority>0.8</priority></url>
+</urlset>

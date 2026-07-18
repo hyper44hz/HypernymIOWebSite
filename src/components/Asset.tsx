@@ -8,13 +8,30 @@ interface AssetProps {
 }
 
 export const Asset: React.FC<AssetProps> = ({ src, description, dimensions, className = "" }) => {
+  const isVideo = src.endsWith('.mp4') || src.endsWith('.webm') || src.endsWith('.mov');
+
+  if (isVideo) {
+    const mimeType = src.endsWith('.webm') ? 'video/webm' : src.endsWith('.mov') ? 'video/mp4' : 'video/mp4';
+    return (
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        aria-label={description}
+        className={className}
+      >
+        <source src={src} type={mimeType} />
+      </video>
+    );
+  }
+
   return (
-    <div 
-      className={`asset-placeholder ${className}`} 
-      data-src={src}
-      aria-label={description}
-    >
-      [ASSET: {src} — {description} — {dimensions}]
-    </div>
+    <img
+      src={src}
+      alt={description}
+      className={className}
+    />
   );
 };

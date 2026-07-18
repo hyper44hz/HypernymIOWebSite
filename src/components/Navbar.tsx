@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Asset } from './Asset';
@@ -25,7 +25,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 h-[72px] flex items-center ${isScrolled ? 'nav-blur' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-6 flex items-center justify-between h-full">
+      <div className="container mx-auto px-5 sm:px-8 lg:px-[60px] flex items-center justify-between h-full">
         <Link to="/" className="flex-shrink-0">
           <Asset 
             src="/SiteGraphics/logos/hypernym-white.png" 
@@ -115,13 +115,13 @@ export const Navbar: React.FC = () => {
                     <p className="text-text-tertiary text-xs">Enterprise AI infrastructure.</p>
                   </div>
                   <div className="flex flex-col gap-4">
-                    <DropdownItem to="/dataverse#agentic-ai" title="Agentic AI & ML" desc="Datalake and AI agent frameworks" />
-                    <DropdownItem to="/dataverse#data-intelligence" title="Data Intelligence" desc="Unified data layer & fraud detection" />
-                    <DropdownItem to="/dataverse#dashiq" title="DashIQ" desc="Self-serve operational dashboards" />
-                    <DropdownItem to="/dataverse#syncro" title="Syncro" desc="Agentic AI for automation" />
+                    <DropdownItem to="/dataverse/agentic-ai-ml" title="Agentic AI & ML" desc="Governed agents and production ML" />
+                    <DropdownItem to="/dataverse/data-intelligence" title="Data Intelligence" desc="Unified, governed enterprise data" />
+                    <DropdownItem to="/dataverse/dashiq" title="DashIQ" desc="Decision intelligence for every team" />
+                    <DropdownItem to="/dataverse/syncro" title="Syncro" desc="Cross-system agentic automation" />
                   </div>
                   <div className="mt-6 pt-4 border-t border-border-subtle">
-                     <span className="text-[10px] text-text-tertiary uppercase tracking-widest font-semibold tracking-[0.05em]">Deployed for governments and telecoms</span>
+                     <Link to="/dataverse" className="text-[10px] text-purple-accent uppercase tracking-widest font-semibold">Explore the platform architecture →</Link>
                   </div>
                 </motion.div>
               ))}
@@ -187,10 +187,10 @@ export const Navbar: React.FC = () => {
                 onClick={() => setActiveDropdown(activeDropdown === 'dataverse' ? null : 'dataverse')}
                 items={[
                   { to: "/dataverse", label: "Dataverse Overview" },
-                  { to: "/dataverse#agentic-ai", label: "Agentic AI & ML" },
-                  { to: "/dataverse#data-intelligence", label: "Data Intelligence" },
-                  { to: "/dataverse#dashiq", label: "DashIQ" },
-                  { to: "/dataverse#syncro", label: "Syncro" },
+                  { to: "/dataverse/agentic-ai-ml", label: "Agentic AI & ML" },
+                  { to: "/dataverse/data-intelligence", label: "Data Intelligence" },
+                  { to: "/dataverse/dashiq", label: "DashIQ" },
+                  { to: "/dataverse/syncro", label: "Syncro" },
                 ]}
               />
 
@@ -252,3 +252,5 @@ const DropdownItem: React.FC<{ to: string; title: string; desc: string }> = ({ t
     <p className="text-[11px] text-text-tertiary group-hover/item:text-text-secondary transition-colors">{desc}</p>
   </Link>
 );
+
+

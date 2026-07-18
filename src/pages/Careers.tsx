@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Asset } from '../components/Asset';
 import { SectionHeader } from '../components/SectionHeader';
 
@@ -6,7 +6,7 @@ const Careers: React.FC = () => {
   return (
     <div>
       <section className="section-padding bg-bg-primary">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-[60px]">
           <SectionHeader 
             h2="Build the infrastructure of the physical world."
             subtext="We're a small team doing work that matters — deploying AI and IoT systems for governments, telecoms and enterprises across three continents."
@@ -23,7 +23,7 @@ const Careers: React.FC = () => {
       </section>
 
       <section className="section-padding bg-bg-secondary">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-[60px]">
           <SectionHeader h2="Open positions" center />
           <div className="max-w-2xl mx-auto p-8 md:p-12 lg:p-16 bg-bg-primary border border-border-subtle rounded-3xl text-center">
             <p className="text-text-secondary text-[16px] md:text-lg mb-8 leading-relaxed">We're always looking for exceptional people. Send your CV to careers@hypernymbiz.com with the role you're interested in.</p>
@@ -43,3 +43,5 @@ const CareerWhyCard = ({ title, desc }: any) => (
 );
 
 export default Careers;
+
+

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Asset } from '../components/Asset';
 import { SectionHeader } from '../components/SectionHeader';
 import { CTABanner } from '../components/CTABanner';
@@ -7,14 +7,28 @@ const About: React.FC = () => {
   return (
     <div>
       <section className="section-padding bg-bg-primary">
-        <div className="container mx-auto px-6">
-          <SectionHeader 
-            eyebrow="ABOUT HYPERNYM"
-            h2="We build the infrastructure that runs real operations."
-            subtext="Founded in the UK, deployed across 11 countries. Eight years of building IoT and AI systems for some of the most demanding operational environments."
-          />
-          <Asset src="/SiteGraphics/about/team-hero.jpg" description="Team or office photo, professional" dimensions="1200x500" className="w-full aspect-[12/5] mb-12 md:mb-24" />
-          
+        <div className="container mx-auto px-5 sm:px-8 lg:px-[60px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12 md:mb-24">
+            {/* Left Column — Text */}
+            <div>
+              <SectionHeader
+                eyebrow="ABOUT HYPERNYM"
+                h2="We build the infrastructure that runs real operations."
+                subtext="Founded in the UK, deployed across 11 countries. Eight years of building IoT and AI systems for some of the most demanding operational environments."
+              />
+            </div>
+
+            {/* Right Column — Image */}
+           <div className="relative rounded-2xl overflow-hidden border border-border-subtle">
+                                                <Asset
+                                                                src="/SiteGraphics/hero/about.mp4"
+                                                                description=""
+                                                                dimensions="1920x1080"
+                                                                className="w-full h-full object-cover !rounded-2xl !border-none opacity-100"
+                                                              />
+                                              </div>
+          </div>
+
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 py-10 md:py-16 border-y border-border-subtle">
              <AboutStat value="15,000+" label="Devices" />
              <AboutStat value="8 Years" label="Operation" />
@@ -25,7 +39,7 @@ const About: React.FC = () => {
       </section>
 
       <section className="section-padding bg-bg-secondary">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-[60px]">
           <SectionHeader h2="Why we exist." center />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20">
              <div className="p-8 md:p-12 bg-bg-primary rounded-3xl border border-border-subtle">
@@ -42,11 +56,11 @@ const About: React.FC = () => {
       
       {/* Certifications & Partnerships */}
       <section className="py-24 bg-bg-primary border-t border-border-subtle">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-[60px]">
           <SectionHeader h2="Certifications & Partnerships" center />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16" >
             <CredentialItem 
-              logo="/SiteGraphics/about/iso-badge.svg"
+              logo="/SiteGraphics/icons/iso-badge.svg" 
               title="ISO 27001:2022"
               desc="Information security certified"
             />
@@ -61,7 +75,7 @@ const About: React.FC = () => {
               desc="Azure and AI solutions partner"
             />
             <CredentialItem 
-              logo="/SiteGraphics/icons/globe-icon.svg"
+              logo="/SiteGraphics/icons/globe-1.svg"
               title="Deployed in 11 Countries"
               desc="Global operational footprint"
             />
@@ -92,3 +106,5 @@ const AboutStat = ({ value, label }: any) => (
 );
 
 export default About;
+
+

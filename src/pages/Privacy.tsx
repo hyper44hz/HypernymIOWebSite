@@ -1,9 +1,9 @@
-import React from 'react';
+﻿import React from 'react';
 
 const Privacy: React.FC = () => {
   return (
     <div className="section-padding bg-bg-primary min-h-screen">
-      <div className="container mx-auto px-6 max-w-3xl">
+      <div className="container mx-auto px-5 sm:px-8 lg:px-[60px] max-w-3xl">
         <h1 className="mb-8 md:mb-12">Privacy Policy</h1>
         <div className="space-y-12 text-text-secondary leading-relaxed text-[16px] md:text-lg">
           <section>
@@ -38,3 +38,5 @@ const Privacy: React.FC = () => {
 };
 
 export default Privacy;
+
+

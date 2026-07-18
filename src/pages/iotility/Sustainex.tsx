@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Asset } from '../../components/Asset';
 import { SectionHeader } from '../../components/SectionHeader';
 import { CTABanner } from '../../components/CTABanner';
@@ -7,25 +7,32 @@ const Sustainex: React.FC = () => {
   return (
     <div>
       <section className="section-padding bg-bg-primary">
-        <div className="container mx-auto px-6">
-          <SectionHeader 
-            eyebrow="IOTILITY · SUSTAINEX"
-            h2="ESG intelligence. Built on data you already have."
-            subtext="Sustainex turns your operational sensor data into audit-ready ESG and sustainability reporting. Works as a layer on any IoTility product — or standalone."
-          />
-          <div className="relative rounded-2xl overflow-hidden border border-border-subtle shadow-xl">
-            <Asset 
-              src="/SiteGraphics/products/sustainex-hero.jpg" 
-              description="Sustainex dashboard showing ESG metrics, carbon tracking, energy consumption charts" 
-              dimensions="1200x600" 
-              className="w-full aspect-[2/1] md:aspect-[2.4/1]"
-            />
+        <div className="container mx-auto px-5 sm:px-8 lg:px-[60px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column — Text */}
+            <div>
+              <SectionHeader
+                eyebrow="IOTILITY · SUSTAINEX"
+                h2="ESG intelligence. Built on data you already have."
+                subtext="Sustainex turns your operational sensor data into audit-ready ESG and sustainability reporting. Works as a layer on any IoTility product — or standalone."
+              />
+            </div>
+
+            {/* Right Column — Image */}
+            <div className="relative rounded-2xl overflow-hidden border border-border-subtle">
+                          <Asset
+                                          src="/SiteGraphics/hero/sustain-1-720p.mp4"
+                                          description=""
+                                          dimensions="1920x1080"
+                                          className="w-full h-full object-cover !rounded-2xl !border-none opacity-100"
+                                        />
+                        </div>
           </div>
         </div>
       </section>
 
       <section className="section-padding bg-bg-secondary">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-5 sm:px-8 lg:px-[60px]">
           <SectionHeader h2="Three ways to use Sustainex." center />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <DeployModeCard 
@@ -57,3 +64,5 @@ const DeployModeCard = ({ title, body }: { title: string; body: string }) => (
 );
 
 export default Sustainex;
+
+
