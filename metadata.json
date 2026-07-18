@@ -1,0 +1,6 @@
+{
+  "name": "HyperNym",
+  "description": "Official website for HyperNym — a UK-headquartered enterprise IoT and AI company.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
