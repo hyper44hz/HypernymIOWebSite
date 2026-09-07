@@ -124,6 +124,9 @@ const Home: React.FC = () => {
               { src: "/SiteGraphics/logos/clients/nitb.svg", alt: "NITB Pakistan" },
               { src: "/SiteGraphics/logos/clients/ehcd.svg", alt: "EHCD" },
               { src: "/SiteGraphics/logos/clients/frani-t.svg", alt: "Farani Taylor" },
+              { src: "/SiteGraphics/logos/clients/bcix.svg", alt: "BCIX" },
+              { src: "/SiteGraphics/logos/clients/heera.svg", alt: "HEERA" },
+
             ].concat([
               { src: "/SiteGraphics/logos/clients/vodafone.svg", alt: "Vodafone" },
               { src: "/SiteGraphics/logos/clients/mtn.svg", alt: "MTN" },
@@ -135,6 +138,8 @@ const Home: React.FC = () => {
               { src: "/SiteGraphics/logos/clients/nitb.svg", alt: "NITB Pakistan" },
               { src: "/SiteGraphics/logos/clients/ehcd.svg", alt: "EHCD" },
               { src: "/SiteGraphics/logos/clients/frani-t.svg", alt: "Farani Taylor" },
+              { src: "/SiteGraphics/logos/clients/bcix.svg", alt: "BCIX" },
+              { src: "/SiteGraphics/logos/clients/heera.svg", alt: "HEERA" },
             ]).map((logo, i) => (
               <div key={i} className="flex-shrink-0 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 h-[32px] flex items-center justify-center">
                 <img src={logo.src} alt={logo.alt} className="h-full w-auto max-w-[120px] object-contain" />
