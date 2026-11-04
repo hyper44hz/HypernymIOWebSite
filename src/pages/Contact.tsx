@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
     try {
       const response = await fetch(endpoint, {
         method: 'POST',
-        body: formData,
+        body: new URLSearchParams(formData as unknown as Record<string, string>),
         headers: { Accept: 'application/json' },
       });
       if (!response.ok) throw new Error('Submission failed');
@@ -75,6 +75,8 @@ const Contact: React.FC = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Honeypot: hidden from people, bots fill it and get silently dropped */}
+                <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <FormInput name="name" label="Full name*" placeholder="John Doe" required />
                   <FormInput name="company" label="Company name*" placeholder="Company name" required />

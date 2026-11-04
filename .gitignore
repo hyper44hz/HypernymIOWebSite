@@ -39,3 +39,4 @@ __MACOSX/
 # Leftover extraction artifacts (safe to delete)
 extracted/
 *.zip
+server.js

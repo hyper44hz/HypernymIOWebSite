@@ -41,6 +41,15 @@ Copy `.env.example` to `.env`. Never commit `.env` — it is gitignored.
 |---|---|
 | `GEMINI_API_KEY` | Gemini API calls |
 | `APP_URL` | Public URL of the deployment; used for self-referential links and API endpoints |
+| `VITE_CONTACT_FORM_ENDPOINT` | Where the contact form POSTs (build-time). `/api/contact` = bundled `server.ts`; empty = mailto fallback |
+| `GRAPH_TENANT_ID` / `GRAPH_CLIENT_ID` / `GRAPH_CLIENT_SECRET` | Microsoft 365 app registration used by `server.ts` to send via Microsoft Graph (preferred) |
+| `SMTP_HOST` / `SMTP_PORT` / `SMTP_USER` / `SMTP_PASS` | SMTP fallback, used only when `GRAPH_TENANT_ID` is empty (M365: `smtp.office365.com:587`) |
+| `MAIL_FROM` / `CONTACT_TO` | Sender (`support@hypernym.io`) and recipient (`sales@hypernym.io`) of contact-form emails |
+
+### Contact form
+
+- Dev: `npm run dev:api` (API on :3001, reads `.env`) alongside `npm run dev` — Vite proxies `/api` to it.
+- Prod: `npm run build` then `npm start` — serves `dist/` and `/api/contact` on `$PORT`. Logs `... connection OK` on startup if credentials work.
 
 ## Structure
 
